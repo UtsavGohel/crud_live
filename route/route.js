@@ -8,7 +8,6 @@ const router = new express.Router();
 router.get("/", async (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
-console.log(__dirname + "./index.html");
 
 router.get("/client", async (req, res) => {
   const mydata = await Data.find();
@@ -66,10 +65,6 @@ router.delete("/client/:id", async (request, response) => {
   response.send(mydata);
 });
 
-router.get("/", async (req, res) => {
-  res.redirect("/admin");
-});
-
 router.get("/admin", async (req, res) => {
   const mydata = await Admin.find();
   res.send(mydata);
@@ -97,15 +92,6 @@ router.patch("/admin/:id", async (request, response) => {
   // update
   const _id = request.params.id;
   const mydata = await Admin.findByIdAndUpdate(_id, request.body, {
-    new: true,
-  });
-  response.send(mydata);
-});
-
-router.patch("/admin/:name", async (request, response) => {
-  // update
-  const name = request.params.name;
-  const mydata = await Admin.findByIdAndUpdate(name, request.body, {
     new: true,
   });
   response.send(mydata);
