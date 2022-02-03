@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const router = new express.Router();
 
 router.get("/", async (req, res) => {
-  res.redirect("/client");
+  res.sendFile(__dirname + "/index.html");
 });
 
 router.get("/client", async (req, res) => {
