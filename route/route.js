@@ -18,7 +18,7 @@ router.get("/client", async (req, res) => {
 router.post("/client", async (req, res) => {
   const mydata = new Data({
     name: req.body.name,
-    emailid: req.body.emailid,
+    email: req.body.email,
     city: req.body.city,
     country: req.body.country,
   });
