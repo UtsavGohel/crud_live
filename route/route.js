@@ -65,6 +65,11 @@ router.delete("/client/:id", async (request, response) => {
   response.send(mydata);
 });
 
+router.delete("/client", async (req, res) => {
+  const mydata = await Data.deleteMany();
+  res.send(mydata);
+});
+
 router.get("/admin", async (req, res) => {
   const mydata = await Admin.find();
   res.send(mydata);
@@ -101,6 +106,11 @@ router.delete("/admin/:id", async (request, response) => {
   const _id = request.params.id;
   const mydata = await Admin.findByIdAndDelete(_id);
   response.send(mydata);
+});
+
+router.delete("/client", async (req, res) => {
+  const mydata = await Admin.deleteMany();
+  res.send(mydata);
 });
 
 module.exports = router;
