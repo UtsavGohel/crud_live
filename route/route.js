@@ -8,6 +8,7 @@ const router = new express.Router();
 router.get("/", async (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
+console.log(__dirname + "./index.html");
 
 router.get("/client", async (req, res) => {
   const mydata = await Data.find();
