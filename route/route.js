@@ -14,6 +14,11 @@ router.get("/client", async (req, res) => {
   res.send(mydata);
 });
 
+router.get("/client/:id", async (req, res) => {
+  const mydata = await Data.findById(req.params.id);
+  res.send(mydata);
+});
+
 router.post("/client", async (req, res) => {
   const mydata = new Data({
     name: req.body.name,
@@ -72,6 +77,10 @@ router.delete("/client", async (req, res) => {
 
 router.get("/admin", async (req, res) => {
   const mydata = await Admin.find();
+  res.send(mydata);
+});
+router.get("/admin/:id", async (req, res) => {
+  const mydata = await Admin.findById(req.params.id);
   res.send(mydata);
 });
 
