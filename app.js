@@ -3,7 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 const router = require("./route/route");
 require("./dbconn/conn");
-require("./model/schema");
+require("./model/admin");
+require("./model/client");
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
