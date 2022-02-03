@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const AppSchema = mongoose.Schema({
   name: String,
-  emailId: String,
+  emailid: String,
   city: String,
   country: String,
 });
