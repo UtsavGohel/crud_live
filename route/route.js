@@ -117,7 +117,7 @@ router.delete("/admin/:id", async (request, response) => {
   response.send(mydata);
 });
 
-router.delete("/client", async (req, res) => {
+router.delete("/admin", async (req, res) => {
   const mydata = await Admin.deleteMany();
   res.send(mydata);
 });
